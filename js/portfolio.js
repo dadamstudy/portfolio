@@ -19,10 +19,10 @@ $(()=> {
         if($(window).scrollTop() >= topTop) {
             $("#menu a").eq(0).addClass('act').siblings().removeClass('act');
         }
-        if($(window).scrollTop() >= aboutTop) {
+        if($(window).scrollTop() >= aboutTop - 200) {
             $("#menu a").eq(1).addClass('act').siblings().removeClass('act');
         }
-        if($(window).scrollTop() >= port1Top) {
+        if($(window).scrollTop() >= port1Top - 200) {
             $("#menu a").eq(2).addClass('act').siblings().removeClass('act');
         }
         if($(window).scrollTop() >= eventTop  - 200) {
