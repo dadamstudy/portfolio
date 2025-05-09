@@ -1,13 +1,13 @@
 @charset "UTF-8";
 
 * {margin:0; padding:0; box-sizing: border-box;}
-/* ::-webkit-scrollbar {width:0;} */
+::-webkit-scrollbar {width:0;}
 html {scroll-behavior: smooth;}
 html, body {font-family: 'Pretendard-Regular', sans-serif;}
 body {min-height: 300vh;}
 a {text-decoration: none; color:black;}
 img {max-width: 100%;}
-h2 {text-align: center; font-size: 3rem; padding:90pt 0 50pt;}
+h2 {text-align: center; font-size: 3rem; padding:90pt 0 50pt; font-family: 'paybooc-Bold';}
 
 @font-face {
     font-family: 'paybooc-Bold';
@@ -27,11 +27,17 @@ h2 {text-align: center; font-size: 3rem; padding:90pt 0 50pt;}
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+    font-family: 'paybooc-Bold';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/paybooc-Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
 /* 상단(header) 배경 이미지 */
 #top {
     height: 100vh; position: relative;
-    background: url("../images/bg-1.jpg") no-repeat fixed center top / cover ;
+    background: url("../images/bg-7.jpg") no-repeat fixed center top / cover ;
 }
 
 /* 상단메뉴 부분 */
@@ -64,14 +70,15 @@ h2 {text-align: center; font-size: 3rem; padding:90pt 0 50pt;}
 
 /* 타이핑 텍스트 효과 */
 #typing {
-    position: absolute; top:40%; width:100%;
+    position: absolute; top:35%; width:100%;
     text-align: center; color:white;
+    font-family: 'paybooc-Bold'; line-height: 300%;
 }
 #typeText {
-    font-size: 3rem;
+    font-size: 2.5rem;
 }
 #cursor {
-    font-size: 4rem; display: inline-block; font-weight: 100;
+    font-size: 2.8rem; display: inline-block; font-weight: 100;
     transform: translateY(2px);
     animation : blink 0.9s steps(2) infinite;
 }
@@ -286,6 +293,9 @@ h2 {text-align: center; font-size: 3rem; padding:90pt 0 50pt;}
 
 /* 모바일 ( 0 ~ 800 px 넓이) */
 @media (max-width:800px) {
+    h2 {
+        font-size: 2rem;
+    }
     #top nav {
         background: rgba(0, 0, 0);
         transition: height 0.5s; position:fixed; width:100%; z-index: 2;
@@ -364,6 +374,9 @@ h2 {text-align: center; font-size: 3rem; padding:90pt 0 50pt;}
         max-width: 90%;
     }
 
+    #contact h2 b {
+        font-size: 1rem;
+    }
     #contact div {
         /* flex-direction: column; */
         justify-content: space-around;

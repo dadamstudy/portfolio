@@ -59,10 +59,10 @@ $(()=> {
 
     //영어 text 한글 text로 변경
     $("#top p").mouseenter(()=> {
-        $("#top p").text("신 다 해");
+        $("#top p").stop().text("신 다 해");
     });
     $("#top p").mouseleave(()=> {
-        $("#top p").text("Shin Da Hae");
+        $("#top p").stop().text("Shin Da Hae");
     });
 
     
@@ -99,7 +99,7 @@ $(()=> {
     }
 
     //타이핑 효과
-    const text = "안녕하세요.\n신다해의 포트폴리오입니다."
+    const text = "안녕하세요.\n프론트 엔드 개발자를 꿈꾸고 있는\n신다해의 포트폴리오입니다."
     const arrText = [...text]
     const $typeText = $('#typeText');
 
@@ -152,7 +152,7 @@ $(()=> {
     },1000); */
 
 
-    //포티폴리오에서 (모바일 바로가기) 클릭할때
+    //포티폴리오에서 (모바일웹 바로가기) 클릭할때
     $(".mobile-1").click(e=> {
         e.preventDefault(); //기본 동작 방지(여기서는 <a>링크 방지)
         window.open(
