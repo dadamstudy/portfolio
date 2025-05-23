@@ -1,0 +1,401 @@
+@charset "UTF-8";
+
+* {margin:0; padding:0; box-sizing: border-box;}
+html {scroll-behavior: smooth;}
+html::-webkit-scrollbar {display:none;}
+html, body {font:13pt/160% "Gowun Dodum", sans-serif;}
+a {text-decoration: none; color:black; display: block;}
+img {max-width:100%; display:block;}
+#layout {max-width: 800px; margin: auto;}
+
+
+/* 첫 화면 */
+@keyframes fade {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+#index {
+    position:relative;
+    animation:fade 2s 0.3s both;
+}
+#index main {
+    padding-top:27vh; width:fit-content; margin:auto;
+}
+#index h1 {
+    text-align: center;
+    font-size: 1.5rem;
+}
+#index h1+p {
+    text-align: center; font-size: 0.8rem;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+#index img {
+    display: block; margin:auto;
+}
+#index a+p {
+    margin-top:20px; font-size: 0.8rem; color:#555;
+}
+
+/* 상단 공통 */
+header h1:not(#index main h1) {
+    background:rgba(180, 216, 255, 0.85); padding:12px; font-size: 0.9rem;
+    text-align: center; font-weight: normal;
+    position:fixed; 
+    top:0; left:0;
+    width:100%; border-bottom: 1px solid #93949e;
+    transition:0.5s;
+}
+header h1>img:not(#index main h1) {
+    max-width:70px; margin:auto;
+}
+header h1:hover:not(#index main h1) {
+    font-weight: bold;
+}
+
+
+
+/* mainhome.html */
+#mainhome {
+    position:relative;
+    margin:auto;
+}
+#mainhome h1 {
+    background:rgb(234, 244, 255, 0.85); padding:12px; font-size: 0.9rem;
+    text-align: center; font-weight: normal;
+    position:fixed; 
+    top:0;
+    width:100%; border-bottom: 1px solid #93949e;
+    transition:0.5s;
+    /* position:absolute; */
+}
+#mainhome h1>img {
+    max-width:70px; margin:auto;
+}
+#mainhome h1:hover {
+    font-weight: bold;
+}
+
+
+/* *** mainhome + viewlist **** */
+#mainhome #viewlist {
+    display: flex; align-items: center; justify-content: space-between;
+    margin:10px; margin-bottom: 30px;
+    margin-top:90px;
+}
+#viewlist h2 {
+    border:1px solid #8d8d8d; flex:1;
+    text-align: center; line-height: 170%;
+    border-radius: 10px;
+    background:linear-gradient(white, rgb(255, 245, 189));
+}
+#viewlist h2:hover {
+    box-shadow: inset 0 0 10px rgb(255, 205, 68);
+}
+#viewlist h2 a {
+    padding:30px 0;
+}
+#viewlist h2 a:hover {
+    color:#794400; font-size:1.7rem;
+}
+#viewlist div {
+    flex: 0.8; text-align: center;
+}
+#viewlist a {
+    display:block; margin:10px 0; margin-left:10px;
+}
+#viewlist div a {
+    border:1px solid #8d8d8d; padding: 25px 0;
+    border-radius: 10px; 
+}
+#viewlist div>#calendarview {
+    background:linear-gradient(white, rgb(255, 238, 231));
+}
+#viewlist div>#calendarview:hover {
+    color:rgb(255, 136, 120); font-weight: bold;
+    box-shadow: inset 0 0 10px rgb(151, 36, 21);
+    font-size:1.1rem;
+}
+#viewlist div>#calendarview+a {
+    background:linear-gradient(white, rgb(231, 246, 255));
+}
+#viewlist div>#calendarview+a:hover {
+    color:rgb(22, 22, 170); font-weight: bold;
+    box-shadow: inset 0 0 10px rgba(97, 184, 255, 0.781);
+    font-size:1.1rem;
+}
+
+/* **** mainhome.html + goallist **** */
+#mainhome #goallist {
+    margin:10px; margin-bottom: 30px;
+}
+#mainhome #goallist h3 {
+    margin-bottom: 10px; border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+#mainhome #goallist img {
+    width:100px; margin:auto;
+}
+
+
+/* **** mainhome.html + usersroom **** */
+#mainhome #usersroom {
+    margin:10px; margin-bottom: 30px;
+}
+#mainhome #usersroom h3 {
+    padding-bottom:10px; border-bottom:1px solid #ddd;
+}
+#mainhome #usersroom div {
+    padding:10px 0; display: flex; justify-content: space-evenly;
+}
+
+
+
+/* mainhome.html + userstips */
+#mainhome #userstips {
+    margin:10px; margin-bottom: 30px; margin-bottom: 250px;
+}
+#mainhome #userstips h3{
+    padding-bottom:10px; border-bottom:1px solid #ddd;
+}
+#mainhome #userstips div {
+    display: flex; justify-content: space-around; margin-top:7px;
+}
+#userstips div nav ul {
+    list-style: none;
+}
+#userstips div nav a {
+    padding-bottom:15px;
+}
+#userstips div nav a:hover {
+    text-decoration: underline; color:#555;
+}
+#userstips aside a {
+    padding:7px 15px; font-size:0.8rem; text-align:center; padding-bottom: 1px;
+}
+#userstips aside img {
+    max-width:45px;
+}
+#userstips aside img:hover {
+    transform: scale(1.1);
+}
+
+/***** myroom.html *****/
+#myroom main {
+    margin-top:90px;
+    margin-bottom: 100px;
+}
+
+/* ****checklist.html**** */
+#checklist main {
+    position:relative;
+}
+#checklist .today {
+    position:absolute; 
+    border:1px solid #aaa;
+    border-radius: 10px;
+    padding: 5px 15px;
+    left:10px;
+    top:100px;
+}
+#checklist .today:hover {
+    background:linear-gradient(rgb(255, 255, 255), rgb(255, 247, 204));
+    box-shadow: inset 0 0 5px rgba(255, 234, 118, 0.699);
+}
+#checklist .tomorrow {
+    position:absolute; 
+    border:1px solid #aaa;
+    border-radius: 10px;
+    padding: 5px 15px;
+    top:100px; right:10px;
+}
+#checklist .tomorrow:hover {
+    background:linear-gradient(rgb(255, 255, 255), #baf1ff);
+    box-shadow: inset 0 0 5px rgba(101, 219, 255, 0.5);
+}
+#checklist #add {
+    position:fixed; padding:7px;
+    border:none;
+    background:none;
+    cursor:pointer;
+    bottom:100px; right:10px;
+    color:rgb(0, 0, 141);
+    font-size: 2.2rem;
+    background:rgba(255, 255, 255, 0.877);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 40px;
+}
+/* checklist addpopup */
+#checklist #addpopup {
+    display:none;
+    position:absolute;
+    bottom:50px;
+    left:calc((100% - 330px) / 2 );
+}
+main+#addpopup div {
+    width:fit-content;
+    border-radius: 10px;
+    position:absolute;
+    background:rgba(255, 255, 255, 0.795);
+    box-shadow: 0 0 5px black;
+    width:330px; height: 200px; bottom:90px; padding:15px;
+    text-align: center;
+}
+#checklist #addpopup h3 {
+    font-size: 0.9rem; border-bottom: 1px solid #ddd;
+}
+#checklist #addpopup button {
+    position:absolute;
+    right:15px;
+    top:15px;
+    border:none; background:none;
+    cursor:pointer;
+}
+#checklist #addpopup button:hover {
+    background:#a5e6ffe5; border-radius: 5px;
+}
+
+/* checklist.html list */
+#list {
+    padding:10px; border:1px solid #aaa;
+    margin:130px 10px 0px 10px;
+    border-radius: 10px;
+    padding-bottom: 50px;
+}
+#list p {
+    margin-bottom: 3px;
+}
+
+/* 캘린더 */
+#calendar {
+    margin-top:20px;
+}
+#calendar table {
+    width:30%;
+}
+#calendar div {
+    margin-bottom:100px;
+}
+#calendar h2 {
+    display:none;
+}
+#calendar div h3 {
+    margin:7px 0 15px 30px;
+}
+#calendar table {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 370px;
+  margin:auto;
+}
+#calendar td, th {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding:2px;
+    color:dimgray;
+}
+#calendar td {
+    padding-bottom: 35px;
+}
+#calendar a {
+    padding:5px 13px 35px 13px;
+}
+#calendar .aprile a {
+    color:#ddd;
+}
+
+
+/* ****calendar.html**** */
+#calendarview #layout {
+    margin-top:100px;
+    margin-bottom: 500px;
+}
+#calendarview div h3 {
+    width:fit-content; margin:auto;
+    margin-bottom: 20px;
+}
+
+
+
+/****** login.html ******/
+#login main {
+    margin-top:130px;
+}
+#login main h1 a:hover {
+    text-decoration: underline; font-weight: bold;
+}
+#login form {
+    border-bottom: 1px solid rgba(58, 160, 255, 0.76);
+    padding:7px; padding-bottom: 30px;
+    max-width:200px; margin:auto;
+}
+#login form h2 {
+    text-align: center; font-size: 1.3rem;
+}
+#login label {
+    display: block; margin-top:20px;
+    font-size: 1rem; padding-bottom: 5px;
+}
+#login input {
+    padding:5px 10px; width:100%;
+}
+#login button {
+    padding:5px 10px; display: block;
+    margin-top: 20px;
+}
+#login div img {
+    width:100px; margin:auto; margin-bottom: 20px;
+}
+#login main #sign {
+    display:flex; width:80%; margin:auto;
+}
+#login a:not(h1 a) {
+    display: block; max-width:250px; margin:auto;
+    margin-top:20px;
+}
+#login a:not(h1 a):hover {
+    text-decoration: underline; font-weight: bold; color:rgb(0, 75, 173);
+    font-size: 1.1rem;
+}
+
+
+/**** myroom.html ****/
+#layout #myroomdeco {
+    width:fit-content;
+    margin:auto;
+}
+#layout #myroomdeco h2 {
+    font-size: 1.3rem;
+    text-align: center;
+}
+#layout #myroomdeco img {
+    margin:auto;
+    margin-top:10px;
+    width:150px;
+}
+#layout h2:last-of-type {
+    font-size: 1.1rem;
+    text-align: center;
+    margin-top:30px;
+}
+
+
+
+
+/* 하단공통 */
+footer {
+    background:rgb(234, 244, 255);
+    border-top: 1px solid #93949e;
+    padding: 10px 0;
+    position:fixed; bottom:0; left: 0;
+    z-index: 1;
+    display:flex; justify-content: space-evenly; align-items: center;
+    width:100%;
+}
+footer img {
+    max-width:40px; position:relative;
+    border-radius: 3px;
+}
+footer img:hover {
+    transform: scale(1.1);
+}

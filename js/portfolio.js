@@ -65,15 +65,6 @@ $(()=> {
         $("#top p").stop().text("Shin Da Hae");
     });
 
-    
-    /* $("#menu a").each((xa, ya)=> {
-        
-        xa.mouseenter(()=> {
-            ya.text(menuName);
-        });
-    }); */
-    
-
 
     //모바일 화면에서 메뉴 보이기
     const menuClose = ()=> {
@@ -99,7 +90,7 @@ $(()=> {
     }
 
     //타이핑 효과
-    const text = "안녕하세요.\n프론트 엔드 개발자를 꿈꾸고 있는\n신다해의 포트폴리오입니다."
+    const text = "안녕하세요.\n프론트엔드 개발자를 꿈꾸고 있는\n신다해의 포트폴리오입니다."
     const arrText = [...text]
     const $typeText = $('#typeText');
 

@@ -1,13 +1,13 @@
 @charset "UTF-8";
 
 * {margin:0; padding:0; box-sizing: border-box;}
-::-webkit-scrollbar {width:0;}
+::-webkit-scrollbar {width:0; height: 0;}
 html {scroll-behavior: smooth;}
 html, body {font-family: 'Pretendard-Regular', sans-serif;}
 body {min-height: 300vh;}
 a {text-decoration: none; color:black;}
 img {max-width: 100%;}
-h2 {text-align: center; font-size: 3rem; padding:90pt 0 50pt; font-family: 'paybooc-Bold';}
+h2 {text-align: center; font-size: 2.7rem; padding:90pt 0 50pt; font-family: 'paybooc-Bold';}
 
 @font-face {
     font-family: 'paybooc-Bold';
@@ -34,13 +34,118 @@ h2 {text-align: center; font-size: 3rem; padding:90pt 0 50pt; font-family: 'payb
     font-style: normal;
 }
 
-/* 상단(header) 배경 이미지 */
+/* 상단(header) 배경 + 보트 */
 #top {
-    height: 100vh; position: relative;
-    background: url("../images/bg-7.jpg") no-repeat fixed center top / cover ;
+  height: 100vh;
+  position :relative;
+  background: rgb(45, 118, 160);
+}
+#starArea {
+    position: relative;
+}
+#small_star_1 {
+    position: absolute;
+    top:200px;
+    left:200px;
+    animation: stars_2 2s infinite;
+}
+#small_star_2 {
+    position: absolute;
+    top:250px;
+    left:1000px;
+    animation: stars_2 2s infinite;
+}
+#small_star_3 {
+    position: absolute;
+    top:100px;
+    left:400px;
+    animation: stars 2s infinite;
+}
+#small_star_4 {
+    position: absolute;
+    top:400px;
+    left:500px;
+    animation: stars 2s infinite;
+}
+#small_star_5 {
+    position: absolute;
+    top:400px;
+    left:1500px;
+    animation: stars 2s infinite;
+}
+#small_star_6 {
+    position: absolute;
+    top:150px;
+    left:1300px;
+    animation: stars_2 2s infinite;
+}
+#stars {
+    position: absolute;
+    opacity: 30%;
+    top:0;
+}
+#stars_back {
+    position: absolute;
+    opacity: 30%;
+}
+@keyframes stars {
+    0% {opacity: 100%;}
+    50% {opacity: 30%;}
+    70% {opacity: 0%; rotate: 30deg;}
+    100% {opacity: 100%; }
+}
+@keyframes stars_2 {
+    0% {opacity: 100%;}
+    50% {opacity: 30%;}
+    70% {opacity: 0%; rotate: -30deg;}
+    100% {opacity: 100%; }
+}
+#bg_wave {
+  position: relative;
+  background-image: url(../images/bg_wave-01.png);
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+/*   background-position: center top;
+  background-attachment: fixed; */
+}
+#boatArea {
+  position: relative;
+  width: 192px; overflow: hidden;
+  height: 1080px;
+  left:0; top:-40px;
+  animation: boat-move 20s infinite linear;
+}
+@keyframes boat-move {
+  0% {left:-10vw; top:-40px;}
+  10% {left:0vw; top:-150px;}
+  20% {left:15vw; top:-130px;}
+  40% {left:35vw; top:-30px;}
+  50% {left:50vw; top:0px;}
+  100% {left:100vw; top:-100px;}
+}
+#boat {
+  position: relative;
+  background-image: url(../images/boat-svg-3.svg);
+  width:1920px;
+  height: 1080px;
+  background-repeat: no-repeat;
+  animation-name: move;
+  animation-timing-function: steps(10);
+  animation-iteration-count: infinite;
+  animation-duration: 2s;
+  animation-delay: -2s;
+}
+@keyframes move {
+  100% {background-position: -1920px;}
 }
 
+
+
 /* 상단메뉴 부분 */
+#top {
+    position:relative;
+}
 #top nav {
     position:fixed; width:100%; top:0;
     padding:13pt 10pt; font-weight: bold; z-index: 2;
@@ -65,7 +170,7 @@ h2 {text-align: center; font-size: 3rem; padding:90pt 0 50pt; font-family: 'payb
     color:white; margin-left: 15pt;
 }
 #menu a:hover, #menu a:focus, #menu a.act {
-    color:aqua;
+    color:rgb(255, 146, 146);
 }
 
 /* 타이핑 텍스트 효과 */
@@ -83,13 +188,14 @@ h2 {text-align: center; font-size: 3rem; padding:90pt 0 50pt; font-family: 'payb
     animation : blink 0.9s steps(2) infinite;
 }
 @keyframes blink {
-    to {opacity:0;}
+    from {opacity: 0%;}
+    to {opacity:100%;}
 }
 
 /* 첫 화면 하단 클릭 화살표 */
 #click {
-    color:white;
-    display: block; width:100%; text-align: center;
+    color:white; width:200px; left: calc((100% - 200px) / 2);
+    display: block; text-align: center;
     position:absolute; bottom: 30px;
 }
 #click b.material-symbols-rounded {
@@ -114,7 +220,7 @@ h2 {text-align: center; font-size: 3rem; padding:90pt 0 50pt; font-family: 'payb
 
 /* About 부분 */
 #about {
-    background:#ddd;
+    background:rgb(210, 233, 247);
     padding-bottom: 50px;
     font-family: 'GowunDodum-Regular';
 }
@@ -153,7 +259,7 @@ h2 {text-align: center; font-size: 3rem; padding:90pt 0 50pt; font-family: 'payb
     background:#fff; border-radius: 5px; overflow: hidden;
 }
 #skill ::-webkit-progress-value {
-    background:tomato;
+    background:rgb(133, 189, 96);
 }
 
 /* 포트폴리오 부분 */
@@ -251,7 +357,7 @@ h2 {text-align: center; font-size: 3rem; padding:90pt 0 50pt; font-family: 'payb
 
 /* 컨택트 부분 */
 #contact {
-    background:#eee;
+    background:#e8f3ff;
     height: 100vh;
     font-family: 'GowunDodum-Regular';
 }
@@ -268,7 +374,7 @@ h2 {text-align: center; font-size: 3rem; padding:90pt 0 50pt; font-family: 'payb
     font-size: 2rem;
 }
 #contact .fa-solid {
-    font-size: 8rem; color:skyblue;
+    font-size: 8rem; color:rgb(79, 142, 179);
 }
 
 
@@ -291,10 +397,34 @@ h2 {text-align: center; font-size: 3rem; padding:90pt 0 50pt; font-family: 'payb
     display: block; margin: auto; max-width:70%;
 }
 
+/* 하단 topbtn 버튼 */
+#topbtn a button {
+    border: none; background:white;
+    position: fixed; right:20pt; bottom: 20pt; color:black;
+    border-radius: 15px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.65);
+    padding:15px;
+}
+#topbtn button:hover {
+    cursor: pointer;
+}
+
 /* 모바일 ( 0 ~ 800 px 넓이) */
 @media (max-width:800px) {
     h2 {
         font-size: 2rem;
+    }
+    #starArea {
+        display: none;
+        animation: none;
+    }
+    #boatArea {
+        display: none;
+        animation: none;
+    }
+    #boat {
+        display: none;
+        animation: none;
     }
     #top nav {
         background: rgba(0, 0, 0);
@@ -316,8 +446,11 @@ h2 {text-align: center; font-size: 3rem; padding:90pt 0 50pt; font-family: 'payb
     #top nav.act #menu {
         left: 0;
     }
+    #typing {
+        top:30%;
+    }
     #typeText {
-        font-size:1.7rem;
+        font-size:1.5rem;
     }
     #cursor {
         font-size: 1.8rem;
@@ -387,4 +520,8 @@ h2 {text-align: center; font-size: 3rem; padding:90pt 0 50pt; font-family: 'payb
     #contact .fa-solid {
         font-size: 5rem;
     }
+    #topbtn a button {
+        right:10pt;
+        padding:5px;
+}
 }

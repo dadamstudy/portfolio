@@ -1,0 +1,262 @@
+@charset "UTF-8";
+
+* {margin:0; padding:0; box-sizing: border-box;}
+html, body {scroll-behavior: smooth;}
+body {height: 3000px; }
+a {text-decoration: none; color:rgb(46, 46, 46);}
+img {max-width:100%; display:block;}
+header h1 a, #topmenu a.mainMenu {font:16pt/160% 'omyu_pretty';font-weight: bold;}
+#topmenu nav.subMenu {font:12pt/150% 'omyu_pretty';}
+#famramyun h3, #ramyunof h3 {font: 12pt/160% 'HakgyoansimDunggeunmisoTTF-B';}
+
+@font-face {
+    font-family: 'HakgyoansimDunggeunmisoTTF-B';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-5@1.0/HakgyoansimDunggeunmisoTTF-B.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'HakgyoansimWoojuR';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-2@1.0/HakgyoansimWoojuR.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'omyu_pretty';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/omyu_pretty.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 공통 페이지 */
+#layout {
+    max-width:1200px; margin:auto;
+    position:relative;
+}
+#layout header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100px;
+}
+#hd {
+    display:flex;
+}
+#hd img {
+    width:50px; display: block;
+    margin-left: 20px;
+}
+#hd h1 a {
+    font-size: 2rem; font-weight: bold;
+    margin-left: 10px;
+}
+/* #hd h1 a:hover {
+    color:rgb(255, 255, 255); text-shadow: 0 0 3px black;
+} */
+#search_area {
+    display: flex; justify-content: center;
+    align-items: center;
+}
+#search_area input {
+    padding:10px 20px;
+    margin-right: 10px;
+    border:1px solid #999;
+    border-radius: 15px;
+}
+#search_area input:hover, #search_area input:focus {
+    box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.7);
+}
+#search_area button {
+    padding: 5px; background:none; border-radius: 10px;
+    border:1.5px solid #999;
+    border-radius: 10px;
+    cursor:pointer;
+}
+#search_area button:hover, #search_area button:focus {
+    border:none; box-shadow: 0 0 5px rgb(255, 178, 13);
+}
+#user {
+    padding:10px;
+}
+#user button {
+    border:1px solid #999;
+    border-radius: 10px;
+    background:none;
+    margin:0 5px;
+    padding:7px;
+}
+#user button:hover, #user button:focus {
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
+    cursor:pointer;
+}
+
+/* 상단메뉴 */
+#topmenu {
+    background:rgb(255, 241, 239);
+    padding: 10px 0;
+}
+#topmenu ul {
+    display: flex; justify-content: space-evenly;
+    list-style: none;
+    text-align: center;
+}
+#topmenu li {
+    position:relative;
+}
+.mainMenu {
+    position:relative;
+    padding: 15px 70px;
+}
+.mainMenu:hover, #topmenu li:hover .mainMenu {
+    background:rgb(255, 167, 161);
+    text-shadow: 0 0 3px rgba(131, 0, 0, 0.7);
+    color:white;
+}
+.mainMenu:focus, #topmenu li:focus .mainMenu {
+    background:rgb(255, 167, 161);
+    text-shadow: 0 0 3px rgba(131, 0, 0, 0.7);
+    color:white;
+}
+.subMenu {
+    position:absolute; width:100%;
+    display:none; z-index: 2;
+    padding-top: 15px;
+}
+.subMenu a {
+    display: block;
+    padding:6px 0;
+}
+.subMenu a:hover {
+    background:rgb(255, 146, 129);
+}
+#menubg {
+    background:rgb(255, 241, 239); position:absolute; width:100%; z-index: 1;
+    height: 170px; display: none;
+}
+
+/* 슬라이드 */
+#slideArea {
+    overflow: hidden;
+}
+#slideArea h2 {
+    display: none;
+}
+#slide {
+    width:4800px;
+    display: flex; height: 500px;
+    position:relative;
+}
+#slide img {
+    width:100%;
+}
+
+#f_ramyun .besthead, #t_ramyun .besthead {
+    display:flex; justify-content: space-around;
+    font-size: 1.5rem; padding:20px;
+    border-bottom: 1px solid #ddd;
+}
+#f_ramyun .besthead a:hover, #t_ramyun .besthead a:hover {
+    color:blue;
+}
+#f_ramyun .img, #t_ramyun .img {
+    display:flex; justify-content: space-around;
+}
+#f_ramyun img, #t_ramyun img {
+    display: inline;
+    width:200px; margin:10px;
+}
+
+
+#rightside {
+    position:absolute; top:17%; right:-100px; left:auto;
+    display: block; border:1px solid blue;
+}
+#rightside a button {
+    padding:20px; margin:5px;
+    background:white;
+    border-radius: 50px;
+    border:1px solid gray;
+    color:gray;
+}
+#rightside a button:hover, #rightside a button:focus {
+    background:gray; color:white;
+    cursor: pointer;
+}
+#rightside #sidebtn {
+    display: flex; flex-direction: column;
+    padding-bottom: 10px;
+}
+
+#sns {
+    padding-top:10px;
+    border-top:1px solid #ddd;
+    text-align: center;
+    display: flex; flex-direction: column;
+}
+#sns img {
+    display: inline;
+    width:50px; 
+    margin:5px 0;
+}
+
+#top {
+    position:fixed; bottom:75px; right:calc((100% - 1200px ) / 2);
+}
+#top button {
+    padding:10px 20px; margin:5px;
+    background:white; border-radius: 10px;
+    border:1px solid gray;
+    color:gray;
+}
+#top button:hover {
+    background:gray; color:white;
+    cursor: pointer;
+}
+
+footer {
+    background:rgb(214, 68, 0);
+    padding:30px 0;
+}
+footer a {
+    color:white;
+}
+footer a:hover, footer a:focus {
+    color:#ddd; text-decoration: underline;
+}
+footer ul {
+    display:flex; justify-content: space-around;
+}
+footer li {
+    list-style: none;
+}
+
+
+
+
+/* 하단 메뉴 고정 */
+#bottom_fixed {
+    position:fixed; width:1200px;
+    height: 70px;
+    bottom: 0;
+    background:#ffd0d0;
+    display: flex; justify-content: space-around; align-items: center;
+    text-align: center;
+}
+#bottom_fixed button {
+    border:none; background:none;
+    padding:0 10px;
+    font-size: 3rem;
+}
+#bottom_fixed button:hover, #bottom_fixed button:focus {
+    cursor:pointer;
+}
+
+/* 팝업 */
+#popup {
+    position:absolute; top:20%; left:calc((100% - 600px) / 2);
+    width:500px;
+    height: 600px;
+    padding:20px;
+    text-align: center;
+    background:white; display: none;
+}

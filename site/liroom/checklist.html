@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>리룸 liroom</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="js/liroom.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    <link rel="stylesheet" href="css/liroom.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0">
+</head>
+<body id="checklist">
+    <div id="layout">
+        <header>
+            <h1>
+                <img src="images/liroom_logo.png" alt="리룸상단로고">
+                Check-List
+            </h1>
+        </header>
+        <main>
+            <div>
+                <button><a href="#" class="today">오늘</a></button>
+                <button><a href="#" class="tomorrow">내일</a></button>
+            </div>
+            <section id="list">
+                <div>
+                    <h3>오늘의 할 일</h3><p>- 루틴1</p>
+                    <form>
+                        <input type="checkbox">
+                        <label>화장실 청소하기</label>
+                        <br>
+                        <input type="checkbox">
+                        <label>신발장 정리하기</label>
+                        <br>
+                        <input type="checkbox">
+                        <label>설거지 하기</label>
+                        <br>
+                        <input type="checkbox">
+                        <label>책상 위 정리하기</label>
+                        <br>
+                        <input type="checkbox">
+                        <label>빨래 하기</label>
+                      </form>
+                </div>
+            </section>
+            <section id="calendar">
+                <h2>March, 2025</h2>
+                <div>
+                <h3>캘린더</h3>
+                <table>
+                    <tr>
+                        <th>S</th>
+                        <th>M</th>
+                        <th>T</th>
+                        <th>W</th>
+                        <th>T</th>
+                        <th>F</th>
+                        <th>S</th>       
+                    </tr>
+                    <tr>
+                        <td><a href="#"></a></td>
+                        <td><a href="#"></a></td>
+                        <td><a href="#"></a></td>
+                        <td><a href="#"></a></td>
+                        <td><a href="#"></a></td>
+                        <td><a href="#"></a></td>
+                        <td><a href="#">1</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">2</a></td>
+                        <td><a href="#">3</a></td>
+                        <td><a href="#">4</a></td>
+                        <td><a href="#">5</a></td>
+                        <td><a href="#">6</a></td>
+                        <td><a href="#">7</a></td>
+                        <td><a href="#">8</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">9</a></td>
+                        <td><a href="#">10</a></td>
+                        <td><a href="#">11</a></td>
+                        <td><a href="#">12</a></td>
+                        <td><a href="#">13</a></td>
+                        <td><a href="#">14</a></td>
+                        <td><a href="#">15</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">16</a></td>
+                        <td><a href="#">17</a></td>
+                        <td><a href="#">18</a></td>
+                        <td><a href="#">19</a></td>
+                        <td><a href="#">20</a></td>
+                        <td><a href="#">21</a></td>
+                        <td><a href="#">22</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">23</a></td>
+                        <td><a href="#">24</a></td>
+                        <td><a href="#">25</a></td>
+                        <td><a href="#">26</a></td>
+                        <td><a href="#">27</a></td>
+                        <td><a href="#">28</a></td>
+                        <td><a href="#">29</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">30</a></td>
+                        <td><a href="#">31</a></td>
+                        <td class="aprile"><a href="#">1</a></td>
+                        <td class="aprile"><a href="#">2</a></td>
+                        <td class="aprile"><a href="#">3</a></td>
+                        <td class="aprile"><a href="#">4</a></td>
+                        <td class="aprile"><a href="#">5</a></td>
+                    </tr>
+                </table>
+            </div>
+            </section>
+        </main>
+        <seciton id="addpopup">
+            <div>
+                <h3>체크리스트 추가</h3>
+                <p>---</p>
+                <button type="button" class="material-symbols-rounded">close</button>
+            </div>
+        </seciton>
+        <footer>
+            <a href="#"><img src="images/icon_empty.png" alt="마이룸꾸미기"></a>
+            <a href="#"><img src="images/icon_star.png" alt="업적"></a>
+            <a href="mainhome.html"><img src="images/icon_home.png" alt="홈화면"></a>
+            <a href="#"><img src="images/icon_comu.png" alt="소통"></a>
+            <a href="login.html"><img src="images/icon_profile.png" alt="프로필"></a>
+        </footer>
+        <button type="button" class="material-symbols-outlined" id="add">add</button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,343 @@
+@charset "UTF-8";
+
+* {margin:0; padding:0; box-sizing: border-box;}
+html, body {scroll-behavior: smooth;}
+a {text-decoration: none; color:#333;}
+img {max-width:100%; display:block;}
+
+@font-face {
+    font-family: 'Cafe24Oneprettynight';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Oneprettynight.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'MapoFlowerIsland';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/MapoFlowerIslandA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#layout {
+    max-width:1200px; margin:auto;
+}
+header {
+    background:#556635; height: 120px;
+    padding:20px;
+    display:flex; justify-content: space-between;
+    align-items: center;
+}
+header img {
+    max-width:200px; display: block;
+}
+header ul {
+    list-style: none; display:flex;
+}
+header ul a {
+    display:block;
+}
+header li {
+    position:relative;
+}
+header li:hover .subMenu , header li:focus-within .subMenu {
+    display:block;
+}
+header li:hover .mainMenu , header li:focus-within .mainMenu {
+    background:white; color:#556635;
+}
+.mainMenu {
+    padding:10px 50px; color:white;
+    font-size: 1.1rem; font-weight: bold; text-align: center;
+    border-top-left-radius: 10px; 
+    border-top-right-radius: 10px;
+}
+.mainMenu:hover, .mainMenu:focus {
+    background:white; color:#556635;
+}
+
+.subMenu {
+    position:absolute; width:100%; text-align: center; z-index: 1;
+    display:none;
+    border-bottom-left-radius: 10px; 
+    border-bottom-right-radius: 10px;
+    background:#8f9c75;
+}
+.subMenu a {
+    padding:10px 0; color:white; font-size: 0.9rem;
+}
+.subMenu a:hover, .subMenu a:focus {
+    background:rgb(189, 235, 187); color:rgb(0, 0, 0);
+}
+.subMenu a:last-child:hover, .subMenu a:last-child:focus {
+    border-bottom-left-radius: 10px; 
+    border-bottom-right-radius: 10px;
+}
+
+
+
+#slideArea {
+    height: 650px; overflow: hidden; position:relative;
+}
+#slideArea h1 {
+    display:none;
+}
+#slideArea p {
+    position:absolute; z-index: 1;
+    font-family: 'MapoFlowerIsland';
+    color:white; font-size: 5rem;
+    top:30%; left:calc((100% - 550px) / 2);
+    display:block; text-align: center;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.7);
+}
+#slide {
+    position:relative; 
+    display:flex; width:3600px;
+}
+
+#class {
+    margin:50px 0;
+}
+#class h2 {
+    text-align: center;
+    margin:50px 0;
+}
+#class > div {
+    display: flex; justify-content: space-around;
+}
+#class > div div {
+    border:1px solid #999;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+.classText {
+    display:block; text-align: center;
+    font-size: 1.3rem;
+    padding-top: 15px;
+}
+.classText:hover, .classText:focus {
+    text-decoration: underline; color:#556635;
+}
+#class a {
+    display:block; overflow: hidden;
+}
+#class img {
+    width:250px; transition: 0.5s;
+}
+#class img:hover {
+    transform: scale(1.5);
+}
+#goodthings {
+    padding:50px 0;
+}
+#goodthings h2{
+    display:none;
+}
+#goodthings >div {
+    margin:50px 30px;
+    padding:50px 20px;
+    display:flex; justify-content: center;
+}
+.good1 h3, .good2 h3, .good3 h3, .good4 h3 {
+    position:absolute; top:90px; left:70px;
+    color:rgb(255, 255, 255);
+    font-size: 1.4rem;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
+    transition:0.5s;
+}
+.good1 p {
+    position:absolute; top:90px; left:55px;
+    color:white;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
+    display:none;
+}
+.good2 p {
+    position:absolute; top:90px; left:50px;
+    color:white;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
+    display:none;
+}
+.good3 p {
+    position:absolute; top:90px; left:40px;
+    color:white;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
+    display:none;
+}
+.good4 p {
+    position:absolute; top:90px; left:40px;
+    color:white;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
+    display:none;
+}
+#goodthings img {
+    position:relative;
+    width:200px;
+}
+#goodthings .good1, #goodthings .good3 {
+    transform: translateY(-50px); transition:0.5s;
+}
+#goodthings .good2, #goodthings .good4 {
+    transform: translateY(50px); transition:0.5s;
+}
+#goodthings >div div:hover {
+    transform: scale(1.7); z-index: 1;
+}
+.good1:hover h3, .good2:hover h3, .good3:hover h3, .good4:hover h3 {
+    top:55px;
+}
+.good1:hover p, .good2:hover p, .good3:hover p, .good4:hover p {
+    display:block;
+}
+
+#nogall {
+    display:flex; padding:10px 5px;
+}
+#nogall h2 span {
+    padding-left: 10px;
+    font-weight: normal;
+    font-style: italic;
+    color:#999;
+    font-size:0.9rem;
+}
+#nogall h2::before {
+    content: ' \25CE';
+    margin-right: 10px;
+    color:#556635;
+}
+#nogall h2 a:hover, #nogall h2 a:focus {
+    color:#556635;
+}
+#notice {
+    flex:1; margin:5px 10px;
+}
+
+#notice ol, #gallery ul {
+    list-style: none; border:1px solid #666;
+    padding:20px 10px; line-height: 170%;
+    margin:10px 5px;
+}
+#notice ol a:hover, #gallery ul a:hover {
+    text-decoration: underline; color:#556635;
+}
+#notice li span, #gallery li span {
+    float: right; color:gray;
+}
+
+#gallery {
+    flex:1; margin:5px 10px;
+}
+#port {
+    height: 500px; padding:10px 15px;
+}
+#port h2::before {
+    content: ' \25CE';
+    margin-right: 10px;
+    color:#556635;
+}
+#port h2 a:hover, #port h2 a:focus {
+    color:#556635;
+}
+#port h2 span {
+    padding-left: 10px;
+    font-weight: normal;
+    font-style: italic;
+    color:#999;
+    font-size:0.9rem;
+}
+#port div {
+    display: flex; justify-content: space-around;
+    margin:5px 10px;
+}
+#port div a {
+    height: 400px;  margin:30px;
+}
+#port img {
+    height: 320px;
+}
+
+#location {
+    height: 600px;
+    position:relative;
+    background:#556635;
+    padding:20px;
+}
+#location h2::before {
+    content: ' \25CE';
+    color:white;
+    margin-right: 10px;
+}
+#location h2 a {
+    color:white; 
+}
+#location h2 a:hover, #location h2 a:focus {
+    color:#9bc28f;
+}
+#location h2 span {
+    padding-left: 10px;
+    font-weight: normal;
+    font-style: italic;
+    color:#ddd;
+    font-size:0.9rem;
+}
+#location img:first-child {
+    border-radius: 40px; position:absolute;
+    height: 450px;
+    margin-left: 40px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+#location img:last-child {
+    width:70%;
+    border-radius: 20px;
+    height: 450px;
+    margin:auto;
+    margin-top:40px;
+    margin-left: 300px;
+    opacity:30%;
+}
+.locationText {
+    color:white;
+    position:absolute;
+    margin-left: 620px; top:32%;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
+}
+.locationText li {
+    margin:30px 0;
+}
+
+footer {
+    height: 170px; padding:0 25px;
+    display:flex; align-items: center; justify-content: space-between;
+    background:#323826; color:#ccc;
+    font-size: 0.9rem;
+}
+footer >div a {
+    color:white;
+    padding-right: 10px;
+}
+footer >div a:hover, footer >div a:focus {
+    color:#999;
+    text-decoration: underline;
+}
+footer img {
+    width:200px;
+}
+footer nav ul {
+    list-style: none;
+}
+
+#top {
+    position:fixed; top:85%; right:300px;
+}
+#top button {
+    background: #556635;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.55);
+    font-size: 1.7rem;
+    border:0;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#top button {
+    color:white;
+}
