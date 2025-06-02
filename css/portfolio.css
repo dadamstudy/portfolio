@@ -7,7 +7,7 @@ html, body {font-family: 'Pretendard-Regular', sans-serif;}
 body {min-height: 300vh;}
 a {text-decoration: none; color:black;}
 img {max-width: 100%;}
-h2 {text-align: center; font-size: 2.7rem; padding:90pt 0 50pt; font-family: 'paybooc-Bold';}
+h2 {text-align: center; font-size: 2.7rem; padding:150pt 0 50pt; font-family: 'paybooc-Bold';}
 
 @font-face {
     font-family: 'paybooc-Bold';
@@ -34,12 +34,22 @@ h2 {text-align: center; font-size: 2.7rem; padding:90pt 0 50pt; font-family: 'pa
     font-style: normal;
 }
 
-/* 상단(header) 배경 + 보트 */
+/* 상단(header) 배경 */
 #top {
   height: 100vh;
   position :relative;
   background: rgb(45, 118, 160);
+  animation: bg 10s infinite;
+  overflow: hidden;
 }
+@keyframes bg {
+    0% {background:#2d76a0;}
+    25% {background: rgb(76, 148, 189);}
+    55% {background: rgb(117, 187, 228);}
+    75% {background:rgb(56, 131, 175);}
+    100% {background: #2d76a0;}
+}
+/* 별 애니메이션 부분 */
 #starArea {
     position: relative;
 }
@@ -90,16 +100,17 @@ h2 {text-align: center; font-size: 2.7rem; padding:90pt 0 50pt; font-family: 'pa
 }
 @keyframes stars {
     0% {opacity: 100%;}
-    50% {opacity: 30%;}
+    40% {opacity: 30%;}
     70% {opacity: 0%; rotate: 30deg;}
     100% {opacity: 100%; }
 }
 @keyframes stars_2 {
-    0% {opacity: 100%;}
-    50% {opacity: 30%;}
-    70% {opacity: 0%; rotate: -30deg;}
-    100% {opacity: 100%; }
+    0% {opacity: 0%;}
+    40% {opacity: 100%;}
+    70% {opacity: 30%; rotate: -30deg;}
+    100% {opacity: 0%; }
 }
+/* 보트 애니메이션 부분 */
 #bg_wave {
   position: relative;
   background-image: url(../images/bg_wave-01.png);
@@ -220,14 +231,19 @@ h2 {text-align: center; font-size: 2.7rem; padding:90pt 0 50pt; font-family: 'pa
 
 /* About 부분 */
 #about {
-    background:rgb(210, 233, 247);
+    background:linear-gradient(#1f5d7c, #e8f3ff, #fff);
     padding-bottom: 50px;
     font-family: 'GowunDodum-Regular';
+}
+#about h2 {
+    color:white;
 }
 #about img {
     display: block;
     margin: auto;
     width:300px; max-width: 60%;
+    border:10px solid rgb(56, 50, 51);
+    border-radius: 50%;
 }
 #about q {
     display: block; width:fit-content;
@@ -257,6 +273,7 @@ h2 {text-align: center; font-size: 2.7rem; padding:90pt 0 50pt; font-family: 'pa
 }
 #skill ::-webkit-progress-bar {
     background:#fff; border-radius: 5px; overflow: hidden;
+    border:2px solid #55693b;
 }
 #skill ::-webkit-progress-value {
     background:rgb(133, 189, 96);
@@ -357,7 +374,7 @@ h2 {text-align: center; font-size: 2.7rem; padding:90pt 0 50pt; font-family: 'pa
 
 /* 컨택트 부분 */
 #contact {
-    background:#e8f3ff;
+    background:linear-gradient(#fff, #ffe5e5);
     height: 100vh;
     font-family: 'GowunDodum-Regular';
 }
@@ -374,7 +391,7 @@ h2 {text-align: center; font-size: 2.7rem; padding:90pt 0 50pt; font-family: 'pa
     font-size: 2rem;
 }
 #contact .fa-solid {
-    font-size: 8rem; color:rgb(79, 142, 179);
+    font-size: 8rem; color:rgb(255, 134, 134);
 }
 
 
@@ -404,13 +421,33 @@ h2 {text-align: center; font-size: 2.7rem; padding:90pt 0 50pt; font-family: 'pa
     border-radius: 15px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.65);
     padding:15px;
+    display: none;
 }
 #topbtn button:hover {
     cursor: pointer;
 }
 
-/* 모바일 ( 0 ~ 800 px 넓이) */
-@media (max-width:800px) {
+/* 모바일 넓이 1200px 이하 */
+@media (max-width:1200px) {
+    #boatArea {
+        position: relative;
+        width: 192px; overflow: hidden;
+        height: 1080px;
+        left:20vw; top:3vh;
+        animation: boat-updown 12s infinite;
+    }
+    @keyframes boat-updown {
+        0% {top:3vh; rotate: 0;}
+        10% {top:7vh; rotate: -2deg;}
+        20% {top:5vh; rotate: 2deg;}
+        40% {top:8vh; rotate:-3deg;}
+        50% {top:5vh; rotate: 7deg;}
+        100% {top:3vh; rotate: 0;}
+    }
+}
+
+/* 모바일 넓이 750px 이하 */
+@media (max-width:750px) {
     h2 {
         font-size: 2rem;
     }
@@ -418,13 +455,23 @@ h2 {text-align: center; font-size: 2.7rem; padding:90pt 0 50pt; font-family: 'pa
         display: none;
         animation: none;
     }
-    #boatArea {
-        display: none;
-        animation: none;
+    #bg_wave {
+        background-position-x: -70px;
     }
-    #boat {
-        display: none;
-        animation: none;
+    #boatArea {
+        position: relative;
+        width: 192px; overflow: hidden;
+        height: 1080px;
+        left:20vw; top:-25vh;
+        animation: boat-updown 12s infinite;
+    }
+    @keyframes boat-updown {
+        0% {top:-25vh; rotate: 0;}
+        10% {top:-22vh; rotate: -2deg;}
+        20% {top:-24vh; rotate: 2deg;}
+        40% {top:-21vh; rotate:-3deg;}
+        50% {top:-26vh; rotate: 7deg;}
+        100% {top:-25vh; rotate: 0;}
     }
     #top nav {
         background: rgba(0, 0, 0);
@@ -502,7 +549,6 @@ h2 {text-align: center; font-size: 2.7rem; padding:90pt 0 50pt; font-family: 'pa
         font-size:0.9rem; padding:3px 8px; margin:3px 0;
     }
 
-
     #popup img {
         max-width: 90%;
     }
@@ -525,3 +571,45 @@ h2 {text-align: center; font-size: 2.7rem; padding:90pt 0 50pt; font-family: 'pa
         padding:5px;
 }
 }
+/* 모바일 넓이 380px 이하 */
+@media(max-width:380px) {
+    #bg_wave {
+        background-position-x:-250px ;
+    }
+    #boatArea {
+        position: relative;
+        width: 192px; overflow: hidden;
+        height: 1080px;
+        left:20vw; top:-47vh;
+        animation: boat-updown 10s infinite;
+    }
+    @keyframes boat-updown {
+        0% {top:-47vh; rotate: 0;}
+        10% {top:-45vh; rotate: -2deg;}
+        20% {top:-47vh; rotate: 2deg;}
+        40% {top:-44vh; rotate:-3deg;}
+        50% {top:-51vh; rotate: 5deg;}
+        100% {top:-47vh; rotate: 0;}
+    }
+}
+
+/* @media (max-height:940px) {
+    #bg_wave {
+        background-position-x:-150px ;
+    }
+    #boatArea {
+        position: relative;
+        width: 192px; overflow: hidden;
+        height: 1080px;
+        left:20vw; top:-15vh;
+        animation: boat-updown 10s infinite;
+    }
+    @keyframes boat-updown {
+        0% {top:-15vh; rotate: 0;}
+        10% {top:-10vh; rotate: -2deg;}
+        20% {top:-12vh; rotate: 2deg;}
+        40% {top:-10vh; rotate:-3deg;}
+        50% {top:-16vh; rotate: 5deg;}
+        100% {top:-15vh; rotate: 0;}
+    }
+} */

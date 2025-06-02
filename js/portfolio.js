@@ -57,6 +57,18 @@ $(()=> {
         }
     });
 
+    //스크롤 내려갔을 때 'top으로 이동하는 화살표' slide로 보이기
+    $(window).scroll(()=> {
+        scrollTop = $(window).scrollTop();
+
+        if($(window).scrollTop() >= 300) {
+            $("#topbtn button").slideDown();
+        }
+        if ($(window).scrollTop() < 300) {
+            $("#topbtn button").slideUp();
+        }
+    });
+
     //영어 text 한글 text로 변경
     $("#top p").mouseenter(()=> {
         $("#top p").stop().text("신 다 해");
