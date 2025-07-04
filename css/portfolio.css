@@ -45,7 +45,7 @@ h2 {text-align: center; font-size: 2.7rem; padding:150pt 0 50pt; font-family: 'p
 @keyframes bg {
     0% {background:#2d76a0;}
     25% {background: rgb(76, 148, 189);}
-    55% {background: rgb(117, 187, 228);}
+    55% {background: rgb(98, 164, 202);}
     75% {background:rgb(56, 131, 175);}
     100% {background: #2d76a0;}
 }
@@ -252,17 +252,19 @@ h2 {text-align: center; font-size: 2.7rem; padding:150pt 0 50pt; font-family: 'p
 #about h3 {
     padding-bottom: 10px;
 }
+#about section p {
+    line-height: 170%;
+}
 #about div {
     display: flex;
     max-width: 1300px; margin: auto;
 }
-
 #about section {
-    flex: 1;
+    flex: 0.6;
     padding:10px;
 }
 #about section:nth-child(2) {
-    flex:1.9;
+    flex:1.1;
 }
 #skill lable {
     display: inline-block; width:40%;
