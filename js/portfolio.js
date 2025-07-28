@@ -16,6 +16,7 @@ $(()=> {
         
         const port3Top = $("#port3").offset().top;
         const port4Top = $("#port4").offset().top;
+        const port5Top = $("#port5").offset().top;
         
         //메뉴 하이라이트 변화
         if($(window).scrollTop() >= topTop) {
@@ -50,6 +51,9 @@ $(()=> {
         }
         if($(window).scrollTop() >= port4Top - 600) {
             $("#port4").addClass('act');
+        }
+        if($(window).scrollTop() >= port5Top - 600) {
+            $("#port5").addClass('act');
         }
 
         //모바일이 아닐 때(넓이가 800px 보다 클 때)
