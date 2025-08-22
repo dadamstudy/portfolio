@@ -500,10 +500,10 @@ h2 {text-align: center; font-size: 2.7rem; padding:150pt 0 50pt; font-family: 'p
         top:30%;
     }
     #typeText {
-        font-size:1.5rem;
+        font-size:1.2rem;
     }
     #cursor {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
     }
     #menu {
         position:absolute; background: rgb(255, 255, 255); width:70%; left:-100vw;
