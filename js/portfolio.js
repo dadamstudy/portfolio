@@ -16,7 +16,7 @@ $(()=> {
         
         const port3Top = $("#port3").offset().top;
         const port4Top = $("#port4").offset().top;
-        const port5Top = $("#port5").offset().top;
+        /* const port5Top = $("#port5").offset().top; */
         
         //메뉴 하이라이트 변화
         if($(window).scrollTop() >= topTop) {
@@ -52,9 +52,9 @@ $(()=> {
         if($(window).scrollTop() >= port4Top - 600) {
             $("#port4").addClass('act');
         }
-        if($(window).scrollTop() >= port5Top - 600) {
+        /* if($(window).scrollTop() >= port5Top - 600) {
             $("#port5").addClass('act');
-        }
+        } */
 
         //모바일이 아닐 때(넓이가 800px 보다 클 때)
         if($(window).innerWidth() > 800 ) {
@@ -111,7 +111,7 @@ $(()=> {
     }
 
     //타이핑 효과
-    const text = "안녕하세요.\n프론트엔드 개발자를 꿈꾸고 있는\n신다해의 포트폴리오입니다."
+    const text = "안녕하세요.\n계속 성장하며 늘 성실히 앞으로 나아가는\n신다해의 포트폴리오입니다."
     const arrText = [...text]
     const $typeText = $('#typeText');
 
@@ -135,33 +135,6 @@ $(()=> {
             $("#skill progress").eq(i).delay(num).animate({value:x}, 1000);
         });
     }
-    /* 수동으로 하나하나
-    $("#photoshop").animate({value:85}, 1300);
-    $("#illust").delay(100).animate({value:90}, 1300);
-    $("#html").delay(200).animate({value:70}, 1300);
-    $("#java").delay(300).animate({value:70}, 1300);
-    $("#figma").delay(400).animate({value:80}, 1300); */
-
-    /* 여러개 가능
-    const skills = {
-        photoshop : 85,
-        illust : 90,
-        html : 70,
-        java : 70,
-        figma : 80
-    }
-    $.each(skills, (i, j, z)=>{
-        console.log(i + '...' + j); //photoshop...85
-        
-        $(`#${i}`).stop().animate({value:j}, 1200);
-    }); */
-
-    /* 1개 할 때 가능
-    const photoshop = $("#photoshop")
-    const value_1 = parseInt(photoshop.text()); //90
-    photoshop.stop().animate({
-        value : value_1
-    },1000); */
 
 
     //포티폴리오에서 (모바일웹 바로가기) 클릭할때
